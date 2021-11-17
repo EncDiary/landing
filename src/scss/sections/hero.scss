@@ -1,11 +1,10 @@
 @import "../colors.scss";
 
 .hero {
-  &__wrapper {
-    display: flex;
-    column-gap: 40px;
-    padding: 150px 0;
-  }
+  display: grid;
+  grid-column-gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  padding: 150px 0;
   &__content {
     flex: 1;
   }
