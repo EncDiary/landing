@@ -24,7 +24,7 @@ function html() {
 }
 
 function scss() {
-  return src(["src/scss/**.scss", "src/scss/**.css"])
+  return src(["src/scss/**/*.scss", "src/scss/**.css"])
     .pipe(sass())
     .pipe(
       autoprefixer({
@@ -37,8 +37,7 @@ function scss() {
 }
 
 function fonts() {
-  return src("src/fonts/**.ttf")
-    .pipe(dest("dist/fonts"))
+  return src("src/fonts/**.ttf").pipe(dest("dist/fonts"));
 }
 
 function clear() {
@@ -51,7 +50,7 @@ function serve() {
   });
 
   watch("src/**/*.html", series(html)).on("change", sync.reload);
-  watch("src/scss/**.scss", series(scss)).on("change", sync.reload);
+  watch("src/scss/**/*.scss", series(scss)).on("change", sync.reload);
 }
 
 exports.build = series(clear, scss, html, fonts);

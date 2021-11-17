@@ -1,0 +1,15 @@
+.description {
+  &__title {
+    font-size: 35px;
+    text-align: center;
+    font-weight: normal;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+  }
+  &__text {
+    font-size: 22px;
+    line-height: 32px;
+  }
+}
