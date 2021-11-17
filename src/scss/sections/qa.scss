@@ -1,0 +1,31 @@
+@import "../colors.scss";
+
+.qa {
+  &__title {
+    font-size: 45px;
+    font-weight: normal;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  &__item {
+    border: 3px solid $dark-gray;
+    border-radius: 12px;
+    padding: 20px 18px;
+    margin-bottom: 18px;
+    &-question {
+      font-size: 26px;
+      margin: 0 0 18px;
+    }
+    &-answer {
+      font-size: 18px;
+      margin-left: 20px;
+      ul {
+        padding-left: 20px;
+        margin: 8px 0;
+      }
+    }
+  }
+}
