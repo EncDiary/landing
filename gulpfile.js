@@ -24,7 +24,7 @@ function html() {
 }
 
 function scss() {
-  return src("src/scss/**.scss")
+  return src(["src/scss/**.scss", "src/scss/**.css"])
     .pipe(sass())
     .pipe(
       autoprefixer({
@@ -36,6 +36,11 @@ function scss() {
     .pipe(dest("dist"));
 }
 
+function fonts() {
+  return src("src/fonts/**.ttf")
+    .pipe(dest("dist/fonts"))
+}
+
 function clear() {
   return del("dist");
 }
@@ -45,9 +50,9 @@ function serve() {
     server: "./dist",
   });
 
-  watch("src/**.html", series(html)).on("change", sync.reload);
+  watch("src/**/*.html", series(html)).on("change", sync.reload);
   watch("src/scss/**.scss", series(scss)).on("change", sync.reload);
 }
 
-exports.build = series(clear, scss, html);
-exports.serve = series(clear, scss, html, serve);
+exports.build = series(clear, scss, html, fonts);
+exports.serve = series(clear, scss, html, fonts, serve);

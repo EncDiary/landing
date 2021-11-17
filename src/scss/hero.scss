@@ -1,0 +1,36 @@
+@import "./colors.scss";
+
+.hero {
+  &__wrapper {
+    display: flex;
+    column-gap: 40px;
+    padding: 150px 0;
+  }
+  &__content {
+    flex: 1;
+  }
+  &__preview {
+    flex: 1;
+  }
+  &__title {
+    font-size: 50px;
+    &-version {
+      vertical-align: middle;
+      font-size: 20px;
+      background-color: $light-gray;
+      padding: 7px 10px;
+      margin: 0 7px;
+      border-radius: 10px;
+      border: 2px solid $dark-gray;
+    }
+  }
+  &__description {
+    font-size: 30px;
+    line-height: 45px;
+    margin-bottom: 15px;
+  }
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+  } 
+}

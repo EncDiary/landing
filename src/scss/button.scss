@@ -1,0 +1,41 @@
+@import "./colors.scss";
+
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: block;
+  width: max-content;
+  text-align: center;
+  text-decoration: none;
+  color: $light-black;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 20px;
+  margin: 5px 5px;
+  border: 3px solid $dark-gray;
+  &:disabled {
+    opacity: 0.6;
+    color: $light-black;
+    background-color: $light-gray;
+  }
+  &:focus {
+    box-shadow: 0 0 3px 3px $light-gray;
+  }
+
+  &_primary {
+    @extend .button;
+    background-color: $lightest-gray;
+    &:hover {
+      background-color: $light-gray;
+    }
+  }
+
+  &_secondary {
+    @extend .button;
+    background-color: $background-color;
+    &:hover {
+      background-color: $lightest-gray;
+    }
+  }
+}
