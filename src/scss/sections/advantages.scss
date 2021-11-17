@@ -39,8 +39,16 @@
       text-decoration: none;
       color: $light-black;
       font-weight: bold;
+      border-left: 3px solid $dark-gray;
+      &:hover {
+        background-color: $light-gray;
+      }
       &:first-child {
-        border-right: 3px solid $dark-gray;
+        border-left-width: 0;
+        border-radius: 0 0 0 9px;
+      }
+      &:last-child {
+        border-radius: 0 0 9px 0;
       }
     }
   }

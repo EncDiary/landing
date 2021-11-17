@@ -1,3 +1,5 @@
+{% from "../components/button.html" import button_link %}
+
 <section class="hero">
   <div class="hero__content">
     <h1 class="hero__title">
@@ -8,9 +10,9 @@
       Веб-приложение для ведения зашифрованного дневника
     </div>
     <div class="hero__links">
-      <a href="#" class="button_secondary">Регистрация</a>
-      <a href="#" class="button_primary">Логин</a>
-      <a href="#" class="button_secondary">Демо</a>
+      {{ button_link("Регистрация", "#") }}
+      {{ button_link("Логин", "#", "primary") }}
+      {{ button_link("Демо", "#") }}
     </div>
   </div>
   <div class="hero__preview">

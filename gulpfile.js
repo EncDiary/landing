@@ -1,7 +1,7 @@
 const { src, dest, series, watch } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const csso = require("gulp-csso");
-const include = require("gulp-file-include");
+const nunjucks = require("gulp-nunjucks");
 const htmlmin = require("gulp-htmlmin");
 const del = require("del");
 const concat = require("gulp-concat");
@@ -10,11 +10,7 @@ const sync = require("browser-sync").create();
 
 function html() {
   return src("src/**.html")
-    .pipe(
-      include({
-        prefix: "@@",
-      })
-    )
+    .pipe(nunjucks.compile())
     .pipe(
       htmlmin({
         collapseWhitespace: true,
