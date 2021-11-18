@@ -32,8 +32,20 @@ function scss() {
     .pipe(dest("dist"));
 }
 
+function js() {
+  return src("src/js/**.js")
+    .pipe(concat("script.js"))
+    .pipe(dest("dist"));
+}
+
 function fonts() {
-  return src("src/fonts/**.ttf").pipe(dest("dist/fonts"));
+  return src("src/fonts/**.ttf")
+    .pipe(dest("dist/fonts"));
+}
+
+function images() {
+  return src("src/images/**")
+    .pipe(dest("dist/img"));
 }
 
 function clear() {
@@ -47,7 +59,9 @@ function serve() {
 
   watch("src/**/*.html", series(html)).on("change", sync.reload);
   watch("src/scss/**/*.scss", series(scss)).on("change", sync.reload);
+  watch("src/js/**.js", series(js)).on("change", sync.reload);
+  watch("src/images/**", series(images)).on("change", sync.reload);
 }
 
-exports.build = series(clear, scss, html, fonts);
-exports.serve = series(clear, scss, html, fonts, serve);
+exports.build = series(clear, scss, html, fonts, js, images);
+exports.serve = series(clear, scss, html, fonts, js, images, serve);

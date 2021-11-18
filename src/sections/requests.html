@@ -1,0 +1,54 @@
+{% from "../components/list.html" import ol %}
+{% from "../components/details.html" import details %}
+
+{% macro gallery_image(url, preview_url, title, description) %}
+<div class="gallery__item">
+  <div data-src="{{ url }}" class="gallery__item-link">
+    <img src="{{ preview_url }}" class="gallery__item-link-image" />
+  </div>
+  {{ details(title, description) }}
+</div>
+{% endmacro %}
+
+
+<section class="requests">
+  <h2 class="qa__title">Запросы к серверу</h2>
+  <div id="gallery" class="gallery">
+    {{ gallery_image(
+        "/img/requests/carousel/register.png",
+        "/img/requests/preview/register.png",
+        "Регистрация",
+        ol([
+          "Вы отправляете публичный ключ, имя нового пользователя и соль, которую использует браузер для создания парольной фразы (для AES), на сервер",
+          "Сервер подтверждает операцию создания пользователя"
+        ])
+      )
+    }}
+
+    {{ gallery_image(
+        "/img/requests/carousel/login.png",
+        "/img/requests/preview/login.png",
+        "Логин",
+        ol([
+          "Во время авторизации ваш браузер запрашивает у сервера EncDiary одноразовый ключ.",
+          "Сервер генерирует одноразовый ключ и шифрует его вашим публичным ключом.",
+          "Браузер с помощью вашего приватного ключа расшифровывает его и отправляет на сервер для проверки подлинности.",
+          "Сервер в ответ возвращает JWT (Json Web Token), который будет использоваться для подтверждения владения учетной записью"
+        ])
+      )
+    }}
+
+    {{ gallery_image(
+        "/img/requests/carousel/other.png",
+        "/img/requests/preview/other.png",
+        "Прочие запросы",
+        ol([
+          "Если в запросе есть секретные данные, то перед отправкой на сервер они локально шифруются",
+          "На серверной части производятся действия над базой данных (запись, получение, изменение, удаления данных)",
+          "Если в ответе от сервера есть зашифрованные данные, то они также локально дешифруются"
+        ])
+      )
+    }}
+
+  </div>
+</section>

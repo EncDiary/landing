@@ -1,0 +1,16 @@
+{% macro ol(items) %}
+<ol>
+  {% for item in items %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ol>
+{% endmacro %}
+
+
+{% macro ul(items) %}
+<ul>
+  {% for item in items %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+{% endmacro %}

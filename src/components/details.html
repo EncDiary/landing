@@ -1,0 +1,8 @@
+{% macro details(title, content) %}
+<details class="details">
+  <summary class="details__title">{{ title }}</summary>
+  <div class="details__content">
+    {{ content | safe }}
+  </div>
+</details>
+{% endmacro %}

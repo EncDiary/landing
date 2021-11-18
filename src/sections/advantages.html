@@ -1,3 +1,5 @@
+{% from "../components/list.html" import ul %}
+
 {% macro advantage_card(title, description, footer, theme="") %}
 <div class="advantage{{ theme }}">
   <div class="advantage__content">
@@ -44,11 +46,10 @@
 
   {{ advantage_card(
       title="Используется стандартное шифрование а именно:",
-      description="
-        <ul>
-          <li>RSA - для авторизации пользователя</li>
-          <li>AES-256-CBC - для шифрования записей</li>
-        </ul>" | safe
+      description=ul([
+        "RSA - для авторизации пользователя",
+        "AES-256-CBC - для шифрования записей"
+      ])
     )
   }}
 

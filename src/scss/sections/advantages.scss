@@ -9,7 +9,7 @@
 
 .advantage {
   border: 3px solid $dark-gray;
-  border-radius: 12px;
+  border-radius: 20px;
   &__content {
     padding: 16px 14px;
     &-title {
@@ -45,10 +45,10 @@
       }
       &:first-child {
         border-left-width: 0;
-        border-radius: 0 0 0 9px;
+        border-radius: 0 0 0 18px;
       }
       &:last-child {
-        border-radius: 0 0 9px 0;
+        border-radius: 0 0 18px 0;
       }
     }
   }
