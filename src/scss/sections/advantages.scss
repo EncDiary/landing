@@ -1,20 +1,39 @@
 @import "../colors.scss";
+@import "../media_queries.scss";
 
 .advantages {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 10px;
-  padding: 40px 0;
+  display: flex;
+  padding-bottom: 40px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  @include _992() {
+    padding-bottom: 25px;
+  }
 }
 
 .advantage {
+  width: calc(100% / 3 - 20px);
+  @include _992() {
+    min-width: calc(100% / 2 - 26px);
+    max-width: calc(100% / 2 - 26px);
+    width: calc(100% / 2 - 26px);
+    margin-bottom: 18px;
+  }
+  @include _768() {
+    max-width: 450px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
   border: 3px solid $dark-gray;
   border-radius: 20px;
   &__content {
     padding: 16px 14px;
     &-title {
-      font-size: 23px;
+      font-size: 24px;
       margin-bottom: 16px;
+      @include _430() {
+        font-size: 21px;
+      }
     }
     &-description {
       margin: 6px 0;
@@ -22,10 +41,19 @@
         padding-left: 18px;
       }
     }
+    @include _768() {
+      padding: 19px 17px 14px;
+    }
   }
   &_dark {
     @extend .advantage;
     background-color: $lightest-gray;
+    @include _992() {
+      order: 1;
+    }
+    @include _768() {
+      order: 0;
+    }
   }
   &__footer {
     display: flex;

@@ -1,18 +1,43 @@
 @import "../colors.scss";
+@import "../media_queries.scss";
 
 .qa {
+  padding-bottom: 40px;
+  @include _992() {
+    padding-bottom: 25px;
+  }
   &__item {
     border: 3px solid $dark-gray;
     border-radius: 20px;
-    padding: 20px 18px;
-    margin-bottom: 18px;
+    padding: 22px 21px;
+    margin-bottom: 22px;
+    @include _430() {
+      padding: 18px 17px;
+      margin-bottom: 18px;
+    }
     &-question {
       font-size: 26px;
       margin: 0 0 18px;
+      @include _768() {
+        font-size: 24px;
+      }
+      @include _430() {
+        font-size: 22px;
+      }
     }
     &-answer {
       font-size: 18px;
       margin-left: 20px;
+      line-height: 1.4;
+      @include _768() {
+        font-size: 17px;
+      }
+      @include _576() {
+        margin-left: 0;
+      }
+      @include _430() {
+        font-size: 16px;
+      }
       ul {
         padding-left: 20px;
         margin: 8px 0;

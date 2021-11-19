@@ -1,20 +1,52 @@
 @import "../colors.scss";
+@import "../media_queries.scss";
+
+.requests {
+  padding-bottom: 40px;
+  @include _992() {
+    padding-bottom: 25px;
+  }
+}
 
 .gallery {
-  display: grid;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
   align-items: flex-start;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 10px;
   &__item {
+    width: calc(100% / 3 - 20px);
     border: 3px solid $dark-gray;
     border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    @include _992() {
+      min-width: calc(100% / 2 - 26px);
+      max-width: calc(100% / 2 - 26px);
+      width: calc(100% / 2 - 26px);
+      margin-bottom: 20px;
+    }
+    @include _768() {
+      max-width: 450px;
+      width: 100%;
+      margin-bottom: 22px;
+    }
+    @include _430() {
+      margin-bottom: 18px;
+    }
     &-link {
-      box-sizing: border-box;
       border-bottom: 3px solid $dark-gray;
+      overflow: hidden;
       cursor: zoom-in;
       &-image {
-        border-radius: 18px 18px 0 0;
+        transition: 1.5s;
+        display: block;
+        &:hover {
+          transform: scale(1.2);
+        }
       }
+    }
+    li {
+      margin-bottom: 8px;
     }
   }
 }

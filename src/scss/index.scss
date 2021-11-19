@@ -1,4 +1,5 @@
 @import "./colors.scss";
+@import "./media_queries.scss";
 
 @font-face {
   font-family: "Roboto";
@@ -35,9 +36,33 @@ body {
   padding: 0;
 }
 
+
+
+
+
 .container {
-  width: 1000px;
+  width: 1200px;
+  padding: 0 60px;
   margin: 0 auto;
+  box-sizing: border-box;
+  @include _1200() {
+    width: 992px;
+    padding: 0 30px;
+  }
+  @include _992() {
+    width: 768px;
+    padding: 0 24px;
+  }
+  @include _768() {
+    width: 576px;
+    padding: 0 21px;
+  }
+  @include _576() {
+    width: 100%;
+  }
+  @include _430() {
+    padding: 0 18px;
+  }
 }
 
 img {
@@ -45,11 +70,23 @@ img {
 }
 
 h2 {
-  font-size: 45px;
+  font-size: 42px;
   font-weight: 400;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   text-align: center;
+  @include _768() {
+    font-size: 38px;
+    margin: 36px auto;
+  }
+  @include _576() {
+    width: 90%;
+    font-size: 34px;
+  }
+  @include _430() {
+    font-size: 30px;
+    margin: 30px auto;
+  }
 }

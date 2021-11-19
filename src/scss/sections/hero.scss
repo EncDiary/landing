@@ -1,18 +1,44 @@
 @import "../colors.scss";
+@import "../media_queries.scss";
 
 .hero {
   display: grid;
   grid-column-gap: 40px;
   grid-template-columns: 1fr 1fr;
   padding: 150px 0;
+  align-items: center;
+  @include _992() {
+    grid-column-gap: 20px;
+    padding: 100px 0;
+  }
+  @include _768() {
+    display: block;
+    padding: 50px 0;
+  }
+  @include _576() {
+    padding: 25px 0 50px;
+  }
+  @include _430() {
+    padding: 20px 0 40px;
+  }
   &__content {
     flex: 1;
+    @include _768() {
+      text-align: center;
+    }
   }
   &__preview {
     flex: 1;
   }
   &__title {
     font-size: 50px;
+    @include _576() {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    @include _430() {
+      font-size: 40px;
+    }
     &-version {
       vertical-align: middle;
       font-size: 20px;
@@ -21,15 +47,35 @@
       margin: 0 7px;
       border-radius: 10px;
       border: 2px solid $dark-gray;
+      @include _430() {
+        font-size: 16px;
+        padding: 5px 7px;
+      }
     }
   }
   &__description {
     font-size: 30px;
-    line-height: 45px;
-    margin-bottom: 15px;
+    line-height: 1.5;
+    margin: 0 auto 25px;
+    @include _992() {
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+    @include _768() {
+      font-size: 23px;
+      width: 90%;
+    }
+    @include _430() {
+      font-size: 21px;
+      width: 100%;
+    }
   }
   &__links {
     display: flex;
     flex-wrap: wrap;
+    @include _768() {
+      margin-bottom: 20px;
+      justify-content: center;
+    }
   }
 }
