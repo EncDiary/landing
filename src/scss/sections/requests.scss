@@ -42,6 +42,7 @@
         display: block;
         &:hover {
           transform: scale(1.2);
+          filter: brightness(70%);
         }
       }
     }

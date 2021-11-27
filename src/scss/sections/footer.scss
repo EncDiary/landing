@@ -1,0 +1,50 @@
+@import "../colors.scss";
+@import "../media_queries.scss";
+
+.footer {
+  background-color: $lightest-gray;
+  border-top: 3px solid $dark-gray;
+  padding: 40px 0 80px;
+  font-size: 20px;
+  text-align: center;
+  @include _576 {
+    padding: 30px 0 50px;
+    font-size: 19px;
+  }
+  @include _430 {
+    padding: 20px 0 40px;
+    font-size: 17px;
+  }
+  &__heart {
+    fill: red;
+    width: 21px;
+    height: 21px;
+    @include _576 {
+      width: 20px;
+      height: 20px;
+    }
+    @include _430 {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  &__link {
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 2px 1px;
+    &:visited {
+      color: #000;
+    }
+    &:active {
+      color: #000;
+    }
+    &:focus {
+      color: $dark-gray;
+      border-bottom: 3px solid $dark-gray;
+    }
+    &:hover {
+      color: $dark-gray;
+      border-bottom: 3px solid $dark-gray;
+    }
+  }
+}
