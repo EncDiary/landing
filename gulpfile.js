@@ -48,6 +48,11 @@ function images() {
     .pipe(dest("dist/img"));
 }
 
+function favicon() {
+  return src("src/favicon/**")
+    .pipe(dest("dist"));
+}
+
 function clear() {
   return del("dist");
 }
@@ -63,5 +68,5 @@ function serve() {
   watch("src/images/**", series(images)).on("change", sync.reload);
 }
 
-exports.build = series(clear, scss, html, fonts, js, images);
-exports.serve = series(clear, scss, html, fonts, js, images, serve);
+exports.build = series(clear, scss, html, fonts, js, images, favicon);
+exports.serve = series(clear, scss, html, fonts, js, images, favicon, serve);
