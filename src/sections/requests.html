@@ -2,9 +2,9 @@
 {% from "../components/details.html" import details %}
 
 {% macro gallery_image(url, preview_url, title, description) %}
-<div class="gallery__item">
-  <div data-src="{{ url }}" class="gallery__item-link">
-    <img src="{{ preview_url }}" class="gallery__item-link-image" />
+<div class="requests-gallery__item">
+  <div data-src="{{ url }}" class="requests-gallery__item-link">
+    <img src="{{ preview_url }}" class="requests-gallery__item-link-image" />
   </div>
   {{ details(title, description) }}
 </div>
@@ -13,7 +13,7 @@
 
 <section class="requests">
   <h2 class="qa__title">Запросы к серверу</h2>
-  <div id="gallery" class="gallery">
+  <div id="requests_gallery" class="requests-gallery">
     {{ gallery_image(
         "/img/requests/carousel/register.jpg",
         "/img/requests/preview/register.jpg",

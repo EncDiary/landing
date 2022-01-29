@@ -1,4 +1,4 @@
-Fancybox.bind("#gallery .gallery__item-link", {
+Fancybox.bind("#requests_gallery .requests-gallery__item-link", {
   groupAll: true,
 });
 
