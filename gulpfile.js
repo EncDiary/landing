@@ -20,7 +20,7 @@ function html() {
 }
 
 function scss() {
-  return src(["src/scss/**/*.scss", "src/scss/**.css"])
+  return src(["src/**/*.scss", "src/**.css"])
     .pipe(sass())
     .pipe(
       autoprefixer({
@@ -36,6 +36,11 @@ function js() {
   return src("src/js/**.js")
     .pipe(concat("script.js"))
     .pipe(dest("dist"));
+}
+
+function libs() {
+  return src("src/libs/**/*")
+    .pipe(dest("dist/libs"))
 }
 
 function fonts() {
@@ -63,10 +68,10 @@ function serve() {
   });
 
   watch("src/**/*.html", series(html)).on("change", sync.reload);
-  watch("src/scss/**/*.scss", series(scss)).on("change", sync.reload);
+  watch("src/**/*.scss", series(scss)).on("change", sync.reload);
   watch("src/js/**.js", series(js)).on("change", sync.reload);
   watch("src/images/**", series(images)).on("change", sync.reload);
 }
 
-exports.build = series(clear, scss, html, fonts, js, images, favicon);
-exports.serve = series(clear, scss, html, fonts, js, images, favicon, serve);
+exports.build = series(clear, scss, html, fonts, js, images, favicon, libs);
+exports.serve = series(clear, scss, html, fonts, js, images, favicon, libs, serve);
