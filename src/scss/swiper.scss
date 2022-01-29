@@ -1,0 +1,47 @@
+@import "../scss/media_queries.scss";
+
+.swiper {
+  width: 70%;
+  user-select: none;
+  @include _992 {
+    width: 85%;
+  }
+  @include _768 {
+    width: 100%;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: black !important;
+  background-color: #8883;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50%;
+  @include _576 {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  &:hover {
+    background-color: #8888;
+  }
+  &::after {
+    font-weight: 900;
+    font-size: 30px !important;
+    @include _576 {
+      font-size: 27px !important;
+    }
+  }
+}
+
+.swiper-button-prev::after {
+  margin-right: 4px;
+}
+
+.swiper-button-next::after {
+  margin-left: 4px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #000 !important;
+}
