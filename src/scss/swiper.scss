@@ -1,8 +1,12 @@
 @import "../scss/media_queries.scss";
+@import "../scss/colors.scss";
 
 .swiper {
   width: 70%;
   user-select: none;
+  border: 3px solid $light-black;
+  line-height: 0;
+  background-color: $light-black;
   @include _992 {
     width: 85%;
   }

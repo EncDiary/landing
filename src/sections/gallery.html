@@ -1,27 +1,21 @@
+{% macro gallery_slide(img, alt) %}
+<div class="swiper-slide">
+  <img src="img/gallery/{{ img }}" alt="{{ alt }}" />
+</div>
+{% endmacro %}
+
 <section class="gallery">
   <div class="swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img
-          src="https://via.placeholder.com/600x400/00f/fff?text=first"
-          alt=""
-        />
-      </div>
-      <div class="swiper-slide">
-        <img
-          src="https://via.placeholder.com/600x400/0f0/fff?text=second"
-          alt=""
-        />
-      </div>
-      <div class="swiper-slide">
-        <img
-          src="https://via.placeholder.com/600x400/f00/fff?text=third"
-          alt=""
-        />
-      </div>
+      {{ gallery_slide("login.png", "Login Screen") }}
+      {{ gallery_slide("notes_write.png", "Notes Write Screen") }}
+      {{ gallery_slide("notes_today.png", "Notes Today Screen") }}
+      {{ gallery_slide("notes_history.png", "Notes History Screen") }}
+      {{ gallery_slide("setting_main.png", "Setting Main Screen") }}
+      {{ gallery_slide("setting_secure.png", "Setting Secure Screen") }}
+      {{ gallery_slide("setting_hotkeys.png", "Setting Hotkeys Screen") }}
     </div>
     <div class="swiper-pagination"></div>
-
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
   </div>
