@@ -47,12 +47,4 @@
       background-color: $lightest-gray;
     }
   }
-  &_dark {
-    @extend .button;
-    background-color: $light-black;
-    color: $background-color;
-    &:hover {
-      background-color: $dark-gray;
-    }
-  }
 }

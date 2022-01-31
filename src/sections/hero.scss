@@ -2,13 +2,15 @@
 @import "../scss/media_queries.scss";
 
 .hero {
-  display: grid;
-  grid-column-gap: 40px;
-  grid-template-columns: 1fr 1fr;
   padding: 150px 0;
   align-items: center;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
   @include _992() {
-    grid-column-gap: 20px;
+    width: 95%;
     padding: 100px 0;
   }
   @include _768() {
@@ -22,16 +24,32 @@
     padding: 20px 0 40px;
   }
   &__content {
-    flex: 1;
+    width: 440px;
     @include _768() {
       text-align: center;
+      width: 100%;
     }
   }
   &__preview {
-    flex: 1;
+    line-height: 0;
+    svg {
+      height: 320px;
+      @include _992 {
+        height: 280px;
+      }
+      @include _768 {
+        height: 250px;
+        display: block;
+        margin: 0 auto;
+      }
+      @include _430 {
+        height: 220px;
+      }
+    }
   }
   &__title {
     font-size: 50px;
+    margin-top: 20px;
     @include _576() {
       padding-left: 15px;
       padding-right: 15px;
