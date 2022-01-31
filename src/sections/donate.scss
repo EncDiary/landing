@@ -2,12 +2,12 @@
 @import "../scss/media_queries.scss";
 
 .donate {
-  padding-bottom: 60px;
+  margin-bottom: 90px;
   @include _992 {
-    padding-bottom: 40px;
+    margin-bottom: 70px;
   }
   @include _576 {
-    padding-bottom: 25px;
+    margin-bottom: 55px;
   }
   &__content {
     display: flex;

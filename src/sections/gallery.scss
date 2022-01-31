@@ -1,0 +1,11 @@
+@import "../scss/media_queries.scss";
+
+.gallery {
+  margin-bottom: 90px;
+  @include _992 {
+    margin-bottom: 70px;
+  }
+  @include _576 {
+    margin-bottom: 55px;
+  }
+}

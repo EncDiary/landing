@@ -2,9 +2,12 @@
 @import "../scss/media_queries.scss";
 
 .qa {
-  padding-bottom: 40px;
-  @include _992() {
-    padding-bottom: 25px;
+  margin-bottom: 90px;
+  @include _992 {
+    margin-bottom: 70px;
+  }
+  @include _576 {
+    margin-bottom: 55px;
   }
   &__item {
     border: 3px solid $dark-gray;

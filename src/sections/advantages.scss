@@ -3,11 +3,14 @@
 
 .advantages {
   display: flex;
-  padding-bottom: 40px;
   justify-content: space-around;
   flex-wrap: wrap;
-  @include _992() {
-    padding-bottom: 25px;
+  margin-bottom: 90px;
+  @include _992 {
+    margin-bottom: 70px;
+  }
+  @include _576 {
+    margin-bottom: 55px;
   }
 }
 
