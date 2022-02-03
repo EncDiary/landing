@@ -11,7 +11,7 @@
   {% if footer %}
   <div class="advantage__footer">
     {% for item in footer %}
-    <a href="{{ item.link }}" class="advantage__footer-link">{{ item.text }}</a>
+    <a href="{{ item.link }}" target="_blank" class="advantage__footer-link">{{ item.text }}</a>
     {% endfor %}
   </div>
   {% endif %}
@@ -29,16 +29,16 @@
   
   {{ advantage_card(
       title="Бесплатно и с открытым исходным кодом",
-      description="Мы рекомендуем разворачивать свою копию EncDiary на своем сервере",
+      description="Рекомендуется разворачивать свою копию EncDiary на своем сервере",
       theme="_dark",
       footer=[
         {
           text: "Frontend",
-          link: "#"
+          link: "https://github.com/EncDiary/web-app"
         },
         {
           text: "Backend",
-          link: "#"
+          link: "https://github.com/EncDiary/api"
         }
       ]
     )

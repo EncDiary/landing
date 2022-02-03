@@ -14,6 +14,7 @@
     border-radius: 20px;
     padding: 22px 21px;
     margin-bottom: 22px;
+    background-color: $background-color-dark;
     @include _430() {
       padding: 18px 17px;
       margin-bottom: 18px;

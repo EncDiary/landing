@@ -43,6 +43,11 @@ function libs() {
     .pipe(dest("dist/libs"))
 }
 
+function netlify() {
+  return src("src/_redirects")
+    .pipe(dest("dist"))
+}
+
 function fonts() {
   return src("src/fonts/**.ttf")
     .pipe(dest("dist/fonts"));
@@ -73,5 +78,5 @@ function serve() {
   watch("src/images/**", series(images)).on("change", sync.reload);
 }
 
-exports.build = series(clear, scss, html, fonts, js, images, favicon, libs);
+exports.build = series(clear, scss, html, fonts, js, images, favicon, libs, netlify);
 exports.serve = series(clear, scss, html, fonts, js, images, favicon, libs, serve);
